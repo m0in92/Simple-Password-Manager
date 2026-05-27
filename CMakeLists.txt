@@ -23,6 +23,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         password_manager.h
+        LICENSE
+        README.md
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET password-manager APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
