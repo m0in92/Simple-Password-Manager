@@ -1,3 +1,11 @@
+/**
+ * @file password_manager.h
+ * @author Moin Ahmed
+ * @brief Contains functionality for basic random password generators and means of storing them in a csv file.
+ * @date 2026
+ *
+ */
+
 #ifndef PASSWORD_MANAGER_H
 #define PASSWORD_MANAGER_H
 
@@ -9,6 +17,12 @@
 
 std::string DATA_FILE_PATH = "data.csv";
 
+/**
+ * @brief generate_random_password (credits: https://generate-random.org/passwords/cpp)
+ * @param length: length of the password
+ * @param includeSpecial: whether to include special characters which are "!@#$%^&*()-_=+[]{}|;:,.<>?"
+ * @return std::string with the random password
+ */
 std::string generate_random_password(int length, bool includeSpecial) {
     const std::string lowercase = "abcdefghijklmnopqrstuvwxyz";
     const std::string uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -34,6 +48,12 @@ std::string generate_random_password(int length, bool includeSpecial) {
     return password;
 }
 
+/**
+ * @brief store_user_info_to_csv
+ * @param service: std
+ * @param username
+ * @param password
+ */
 void store_user_info_to_csv(std::string service, std::string username, std::string password)
 {
     std::fstream password_file(DATA_FILE_PATH, std::ios::app);

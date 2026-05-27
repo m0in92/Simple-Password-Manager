@@ -1,3 +1,12 @@
+/**
+ * @file mainwindow.h
+ * @brief Qt Widget Application for the Password Manager Dialog
+ * @author Moin Ahmed
+ * @date 2026
+ *
+ *
+ */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
