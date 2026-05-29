@@ -27,7 +27,7 @@ std::string generate_random_password(int length, bool includeSpecial) {
     const std::string lowercase = "abcdefghijklmnopqrstuvwxyz";
     const std::string uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     const std::string numbers = "0123456789";
-    const std::string special = "!@#$%^&*()-_=+[]{}|;:,.<>?";
+    const std::string special = "!@#$%^&*()-_=+[]{}|;:.<>?";
 
     std::string chars = lowercase + numbers + uppercase + numbers;  // I have added variables "numbers" twice to increase it's chances of being included
     if (includeSpecial) {

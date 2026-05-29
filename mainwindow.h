@@ -43,6 +43,8 @@ private:
     QLineEdit *lineEdit_service;
     QLineEdit *lineEdit_username;
     QLineEdit *lineEdit_password;
+    QGroupBox *groupBox_passwordOptions;
+    QFormLayout *layout_passwordOptions;
     QComboBox *comboBox_passwordLength;
     QPushButton *button_generate_password;
 

@@ -3,11 +3,15 @@
 #include "password_manager.h"
 
 
+int WINDOW_DEFAULT_WIDTH = 800; // in px
+int WINDOW_DEFAULT_HEIGHT = 480; // in px
+
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
     this->setWindowTitle("Password Manager");
-    resize(640, 480);
+    resize(WINDOW_DEFAULT_WIDTH, WINDOW_DEFAULT_HEIGHT);
 
     central_widget = new QWidget(this);
     this->setCentralWidget(central_widget);
@@ -31,9 +35,10 @@ MainWindow::MainWindow(QWidget *parent)
     form_layout = new QFormLayout;
     form_layout->addRow("Service", lineEdit_service);
     form_layout->addRow("Username/Password", lineEdit_username);
-    form_layout->addRow("Password", lineEdit_password);
 
     // Add Password Option (Password Length) to the Form
+    groupBox_passwordOptions = new QGroupBox("Password Options");
+
     comboBox_passwordLength = new QComboBox();
     comboBox_passwordLength->addItem("8");
     comboBox_passwordLength->addItem("12");
@@ -42,7 +47,16 @@ MainWindow::MainWindow(QWidget *parent)
     comboBox_passwordLength->addItem("24");
     comboBox_passwordLength->addItem("32");
     comboBox_passwordLength->setCurrentText("16");
-    form_layout->addRow("Password Length", comboBox_passwordLength);
+
+    layout_passwordOptions = new QFormLayout;
+    layout_passwordOptions->addRow("Password Length", comboBox_passwordLength);
+
+    groupBox_passwordOptions->setLayout(layout_passwordOptions);
+
+    form_layout->addRow(groupBox_passwordOptions);
+
+    // Add Generated Password Output to the Form
+    form_layout->addRow("Generated Password", lineEdit_password);
 
     // Add Button to the Form
     button_generate_password = new QPushButton("Generate Password");
@@ -57,8 +71,6 @@ MainWindow::MainWindow(QWidget *parent)
     model_password = new QStandardItemModel();
 
     update_password_model_from_csv();
-    // QStandardItem *item = new QStandardItem("New Item");
-    // model_password->setItem(1, 1, item);
 
     table_view->setModel(model_password);
     table_view->resizeColumnsToContents();
