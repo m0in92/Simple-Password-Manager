@@ -1,5 +1,7 @@
 # Simple Password Manager
 
+![logo]("assests/icon-medium.png")
+
 Moin Ahmed 2026
 
 ## About
@@ -11,3 +13,5 @@ The graphical user interface is built using Qt.
 
 ### Attribution Notice
 "This software uses Qt. Qt is available under the GNU Lesser General Public License (version 3). The Qt Toolkit is Copyright (C) The Qt Company Ltd. and other contributors."
+
+

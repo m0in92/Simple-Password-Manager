@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include <QIcon>
 
 #include "password_manager.h"
 
@@ -12,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     this->setWindowTitle("Password Manager");
     resize(WINDOW_DEFAULT_WIDTH, WINDOW_DEFAULT_HEIGHT);
+    this->setWindowIcon(QIcon(":/new/prefix1/assests/icon-medium.png"));
 
     central_widget = new QWidget(this);
     this->setCentralWidget(central_widget);
@@ -68,6 +70,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     // Table View (and the relevant QStandardModel) for Displaing the Stored Passwords
     table_view = new QTableView();
+    // table_view->setEditTriggers(QAbstractItemView::NoEditTriggers);
+    // table_view->setSelectionBehavior(QAbstractItemView::SelectItems);
+    // table_view->setSelectionMode(QAbstractItemView::ExtendedSelection);
+    // table_view->setTextElideMode(Qt::ElideNone);
+
     model_password = new QStandardItemModel();
 
     update_password_model_from_csv();

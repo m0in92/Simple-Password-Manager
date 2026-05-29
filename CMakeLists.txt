@@ -18,6 +18,9 @@ set(PROJECT_SOURCES
         mainwindow.h
 )
 
+set(APP_ICON_RESOURCE_WINDOWS
+    "${CMAKE_CURRENT_SOURCE_DIR}/assests/icon-medium.png")
+
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(password-manager
         MANUAL_FINALIZATION
@@ -25,6 +28,8 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         password_manager.h
         LICENSE
         README.md
+        resources.qrc
+        resources.qrc
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET password-manager APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -43,6 +48,8 @@ else()
         )
     endif()
 endif()
+
+qt_add_resources(password-manager PREFIX "/new/prefix1" FILES "assests/icon-medium.png")
 
 target_link_libraries(password-manager PRIVATE Qt${QT_VERSION_MAJOR}::Widgets)
 
