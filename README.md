@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="assests/icon-medium.png" alt="logo" width="120">
+<img src="assests/git-social-image.png" alt="logo" width="120">
 
 # Password Manager
 
@@ -10,7 +10,6 @@ in a csv-file.
 Moin Ahmed 2026
 
 </div>
-
 
 ### Attribution Notice
 
